@@ -1,0 +1,32 @@
+server:
+  port: 9090
+  shutdown: graceful
+
+project:
+  version: 0.0.4
+
+#spring:
+#  application:
+#    name: com.humaxparcs.mhp.parking.message
+#  profiles:
+#    active: local
+---
+spring:
+  application:
+    name: com.humaxparcs.mhp.parking.message
+  datasource:
+    password: alticast#
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://${spring.db.host}:${spring.db.port}/am_dev3?characterEncoding=UTF-8&allowMultiQueries=true
+    username: admin
+  profiles:
+    active: local
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        format_sql: 'true'
+        jdbc:
+          time_zone: UTC
+        show_sql: 'true'
